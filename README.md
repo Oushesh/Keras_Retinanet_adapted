@@ -8,10 +8,14 @@
    * python setup.py build_ext --inplace
 
 ## Train:
+    * Place the images in the folder keras_retinanet/preprocessing/dataset/
     python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/model/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations.csv keras_retinanet/preprocessing/classes.csv
 
-
-
+    * Train directly with Open Images Dataset: OID
+      * Open Images Dataset:  
+      * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Boat
+      * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Bathtub
+      * 
 ## Test:
    * Place the pretrained model in the folder model
    * Each column contains the name of the folder:    
@@ -35,3 +39,5 @@
 ## TODO: add visualisation service to service.
 
 * Deploy to ec2 instance and train.
+* https://storage.googleapis.com/openimages/challenge_2018/bbox_labels_500_hierarchy_visualizer/circle.html
+* Build in the hierarchy circle
