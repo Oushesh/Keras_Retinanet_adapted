@@ -10,7 +10,7 @@
 
 ## Test:
    * Place the pretrained model in the folder model
-   * Place 
+   * Each column contains the name of the folder:    
    * Place the batch image in the folder: input_img
    * python keras-retinanet/retinanet_coco_keras_test.py
    * The output image will be written in the folder of the output_img
