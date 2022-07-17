@@ -6,7 +6,11 @@
    * cd keras-retinanet/
    * pip install .
    * python setup.py build_ext --inplace
-   *
+
+## Train:
+    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/model/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations.csv keras_retinanet/preprocessing/classes.csv
+
+
 
 ## Test:
    * Place the pretrained model in the folder model
@@ -22,7 +26,6 @@
    * python keras-retinanet/retinanet_coco_keras_test.py
    * The output image will be written in the folder of the output_img
 
-## TODO: add the github reinanet.py get the output
 
 ## Rebuild and structure the code with dependencies.
 
