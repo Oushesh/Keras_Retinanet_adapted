@@ -12,9 +12,15 @@
    * Place the pretrained model in the folder model
    * Each column contains the name of the folder:    
    * Place the batch image in the folder: input_img
+   * classes.csv contains the class definition and class number.
+     example:
+     classID, 0
+     classID, 1
+     classID, 2
+     classID, 3
+
    * python keras-retinanet/retinanet_coco_keras_test.py
    * The output image will be written in the folder of the output_img
-   *
 
 ## TODO: add the github reinanet.py get the output
 
