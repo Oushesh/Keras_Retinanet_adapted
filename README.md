@@ -15,7 +15,7 @@
       * Open Images Dataset:  
       * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Boat
       * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Bathtub
-      * 
+      *
 ## Test:
    * Place the pretrained model in the folder model
    * Each column contains the name of the folder:    
@@ -29,7 +29,7 @@
 
    * python keras-retinanet/retinanet_coco_keras_test.py
    * The output image will be written in the folder of the output_img
-
+   * 
 
 ## Rebuild and structure the code with dependencies.
 
