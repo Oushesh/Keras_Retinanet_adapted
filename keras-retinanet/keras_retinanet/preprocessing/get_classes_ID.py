@@ -31,7 +31,6 @@ def _get_classes(classess_csv_path):
                 raise_from(ValueError('line {}: format should be \'encryptedID,classID\''.format(lines)), None)
     return class_dict
 
-
 #Build the annotations_bathtub.csv (here as a test:)
 #Build it in the same format:
 def img_dataloader(dir):
@@ -47,12 +46,22 @@ def get_imgname(url):
     return img_name
 
 #CSV writer:
-def write_out_annotations_csv():
+#Write all the entries to csv format.
+
+def write_out_annotations_csv(csv_filename,data):
+    with open(csv_filename, 'w', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+        # write the header
+        #writer.writerow(header)
+        # write multiple rows
+        writer.writerows(data)
     return None
+
+
 
 def _get_xy(detections_csv_path,class_dict,img_folder):
     #opening the csv file:
-    list = []
+    csv_file_entries = []
     visited_ImageID = []
     #img_url from the present images
     img_urls = img_dataloader(img_folder)
@@ -69,6 +78,7 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
         # displaying the contents of the csv file
 
         for lines in csvFile:
+            csv_line = []
             try:
                 ImageID=lines[0]
                 Source=lines[1]
@@ -110,29 +120,41 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
                     cv2.imwrite(output_path,img)
 
                     #write the annotations_csv in the desired format.
+                    csv_line.append(img_urls[idx])
+                    csv_line.append(x1)
+                    csv_line.append(y1)
+                    csv_line.append(x2)
+                    csv_line.append(y2)
+                    csv_line.append(class_name)
 
+                    csv_file_entries.append(csv_line)
             except ValueError:
                 raise_from(ValueError('line {}: format should be \'encryptedID,classID\''.format(lines)),None)
 
-    #Build a massive list and write out in 1 go.
-    #Use img_dataloader get all the images (x1,y1,x2,y2) --> goat
+
+            csv_line = []
+
     #"dataset/20190220_160752.jpg,202,10,640,476,goat"
-    #"path,x1,y1,x2,y2,classID"
-    #Build a smaller set and test the code here.
-    return list
+
+    return csv_file_entries
 
 if __name__ == '__main__':
-    img_folder = "../Bathtub/train/data"
-    classes_csv_path = "../Bathtub/train/metadata/classes.csv"
+    img_folder = "../Bathtub/test/data"
+    classes_csv_path = "../Bathtub/test/metadata/classes.csv"
 
     class_dict = _get_classes(classes_csv_path)
     #print (class_dict)
-    detection_csv_path = "../Bathtub/train/labels/detections.csv"
+    detection_csv_path = "../Bathtub/test/labels/detections.csv"
 
-    annotation_list = _get_xy(detection_csv_path,class_dict,img_folder)
+    csv_file_entries = _get_xy(detection_csv_path,class_dict,img_folder)
 
-    print ("annotation_list",annotation_list)
+    print ("annotation_list",csv_file_entries)
 
+    #write out to a specific csv file
+    csv_filename = "annotations_bathtub.csv"
+    #annotation_list is a list of list with each list representing a line entry in the csv file
+    write_out_annotations_csv(csv_filename,csv_file_entries)
 
 #TODO: Write csv, get 1 training iteration done --> git status
-#Wrtie out the csv file --> Test out. 
+#Wrtie out the csv file --> Test out.
+#
