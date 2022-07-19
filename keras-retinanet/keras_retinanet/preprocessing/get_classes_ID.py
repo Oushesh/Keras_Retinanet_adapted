@@ -134,4 +134,5 @@ if __name__ == '__main__':
     print ("annotation_list",annotation_list)
 
 
-#TODO: Write csv, get 1 training iteration done:
+#TODO: Write csv, get 1 training iteration done --> git status
+#Wrtie out the csv file --> Test out. 
