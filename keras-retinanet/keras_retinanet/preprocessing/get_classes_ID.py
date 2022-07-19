@@ -139,12 +139,12 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
     return csv_file_entries
 
 if __name__ == '__main__':
-    img_folder = "../Bathtub/test/data"
-    classes_csv_path = "../Bathtub/test/metadata/classes.csv"
+    img_folder = "../Bathtub/train/data"
+    classes_csv_path = "../Bathtub/train/metadata/classes.csv"
 
     class_dict = _get_classes(classes_csv_path)
     #print (class_dict)
-    detection_csv_path = "../Bathtub/test/labels/detections.csv"
+    detection_csv_path = "../Bathtub/train/labels/detections.csv"
 
     csv_file_entries = _get_xy(detection_csv_path,class_dict,img_folder)
 
