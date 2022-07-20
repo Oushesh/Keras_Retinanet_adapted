@@ -1,5 +1,8 @@
 ## Instructions:
    * git clone https://github.com/Oushesh/Keras_Retinanet_adapted
+
+   *
+   * conda create
    * pip install . --user
    * python setup.py build_ext --inplace
    * pip install --user git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI
@@ -37,7 +40,6 @@
    Kaggle Comptetition for opensource.
 
 ## TODO: add visualisation service to service.
-
-* Deploy to ec2 instance and train.
+* Deployed to aws and train
 * https://storage.googleapis.com/openimages/challenge_2018/bbox_labels_500_hierarchy_visualizer/circle.html
 * Build in the hierarchy circle

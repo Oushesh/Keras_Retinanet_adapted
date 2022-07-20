@@ -165,3 +165,6 @@ if __name__ == '__main__':
 
 ## Refactor the code and start the training on aws, then check the statistics.
 ##Add statistics: add
+
+
+## Pass the statistics to Mussie
