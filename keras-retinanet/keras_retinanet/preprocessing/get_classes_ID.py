@@ -157,4 +157,11 @@ if __name__ == '__main__':
 
 #TODO: Write csv, get 1 training iteration done --> git status
 #Wrtie out the csv file --> Test out.
-#
+
+#Installation and the am2 service here: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+#how to setup the aws installation  add the instructions here for aws ec2
+
+## Add option to read in the
+
+## Refactor the code and start the training on aws, then check the statistics.
+##Add statistics: add
