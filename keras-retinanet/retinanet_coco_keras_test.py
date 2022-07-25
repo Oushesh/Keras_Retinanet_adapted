@@ -24,8 +24,12 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--img_dir',default='input_img',help='path to image directory')
     parser.add_argument('--model_path', default=os.path.join("model","resnet50_coco_best_v2.1.0.h5"),help='path to load pretrained retinanet Keras model')
-    parser.add_argument('--annotations_file',default=os.path.join("annotations_classes","annotations.csv"),help='path to the annotations file')
-    parser.add_argument('--classes_file',default=os.path.join("annotations_classes","classes.csv"),help='path to the class dictionary')
+    #parser.add_argument('--annotations_file',default=os.path.join("annotations_classes","annotations.csv"),help='path to the annotations file')
+    parser.add_argument('--annotations_file',default="annotations_classes/annotations.csv",help='path to the annotations file')
+
+    #parser.add_argument('--classes_file',default=os.path.join("annotations_classes","classes.csv"),help='path to the class dictionary')
+    parser.add_argument('--classes_file',default="annotations_classes/classes.csv",help='path to the class dictionary')
+
     parser.add_argument('--threshold_score',default=0.8,help="threshold for the detection")
     parser.add_argument('--output_img_dir',default='output_img',help='path to output img dir')
     args = parser.parse_args()

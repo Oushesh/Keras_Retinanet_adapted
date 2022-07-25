@@ -135,7 +135,6 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
             csv_line = []
 
     #"dataset/20190220_160752.jpg,202,10,640,476,goat"
-
     return csv_file_entries
 
 if __name__ == '__main__':
@@ -162,9 +161,8 @@ if __name__ == '__main__':
 #how to setup the aws installation  add the instructions here for aws ec2
 
 ## Add option to read in the
-
 ## Refactor the code and start the training on aws, then check the statistics.
 ##Add statistics: add
 
-
-## Pass the statistics to Mussie
+##
+## Pass the statistics to Mussie write the statistics 
