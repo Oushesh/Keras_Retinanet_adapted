@@ -12,13 +12,15 @@
 
 ## Train:
     * Place the images in the folder keras_retinanet/preprocessing/dataset/
-    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/model/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations.csv keras_retinanet/preprocessing/classes.csv
+    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations.csv keras_retinanet/preprocessing/classes.csv
+    /resnet50_coco_best_v2.1.0.h5
+
 
     * Train directly with Open Images Dataset: OID
-      * Open Images Dataset:  
-      * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Boat
-      * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Bathtub
-      *
+    * Open Images Dataset:  
+    * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Boat
+    * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Bathtub
+
 ## Test:
    * Place the pretrained model in the folder model
    * Each column contains the name of the folder:    
@@ -30,9 +32,12 @@
      classID, 2
      classID, 3
 
-   * python keras-retinanet/retinanet_coco_keras_test.py
-   * The output image will be written in the folder of the output_img
-   * 
+   * cd keras-retinanet
+   * python retinanet_coco_keras_test.py
+   * The output image will be written in the folder of the "output_img"
+
+## Sample Test Results are:
+   "C:\Users\oushe\Documents\WORKSPACE\RealEstate\Concular\Keras_Retinanet_adapted\keras-retinanet\keras_retinanet\Bathtub\test\Results"
 
 ## Rebuild and structure the code with dependencies.
 
@@ -43,3 +48,9 @@
 * Deployed to aws and train
 * https://storage.googleapis.com/openimages/challenge_2018/bbox_labels_500_hierarchy_visualizer/circle.html
 * Build in the hierarchy circle
+
+
+* Visuaisation Script to
+
+## Sample Results of the Bahtroom Tubs:
+  ![Bathroom001](keras_retinanet/Bathtub/test/Results/2cb84e34527db533_output_Bathroom accessory.jpg)

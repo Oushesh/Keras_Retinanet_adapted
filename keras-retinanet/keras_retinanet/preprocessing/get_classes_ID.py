@@ -112,7 +112,6 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
 
                     #Write the rectangle output
                     #Write out the image_output with its corresponding:
-
                     color = (255, 0, 0)
                     thickness = 2
                     img = cv2.rectangle(img,start_point,end_point,color,thickness)
@@ -130,7 +129,6 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
                     csv_file_entries.append(csv_line)
             except ValueError:
                 raise_from(ValueError('line {}: format should be \'encryptedID,classID\''.format(lines)),None)
-
 
             csv_line = []
 
@@ -165,4 +163,4 @@ if __name__ == '__main__':
 ##Add statistics: add
 
 ##
-## Pass the statistics to Mussie write the statistics 
+## Pass the statistics to Mussie write the statistics
