@@ -1,4 +1,3 @@
-##
 ## Instructions:
    * conda env create -f retinanet.yml
    * pip install -r requirements.txt
@@ -16,17 +15,17 @@
     ├── └── Bathtub (example category class)
     *   The folder should ideally contain test,train, validation and info.json
 
+    * Run the script: 
 ## Train:
-    * Download the model and put it under:
-    Example of run the training:
+    * Download the model from here: https://s3.console.aws.amazon.com/s3/upload/machine-learning-pretrained-models-dev?region=eu-central-1&prefix=Keras-Retina-Net/ and put it the folder snapshots
+    then run:
 
-    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights  keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv "relative path to annotations.csv" "relative path to classes.csv"
-
-    Example:
     python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations_bathtub_corrected.csv keras_retinanet/preprocessing/classes_bathroom_corrected.csv
 
 ## Test:
-   * Place the pretrained model in the folder model
+   * Place the pretrained model in the folder "pretrained model" and run: python retinanet_coco_keras_test.py
+
+
    * Each column contains the name of the folder:    
    * Place the batch image in the folder: input_img
    * classes.csv contains the class definition and class number.
@@ -37,7 +36,7 @@
      classID, 3
 
    * cd keras-retinanet
-   * python retinanet_coco_keras_test.py
+   *
    * The output image will be written in the folder of the "output_img"
 
 ## Sample Test Results are:
