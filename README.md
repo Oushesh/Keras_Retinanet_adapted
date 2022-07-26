@@ -8,14 +8,16 @@
    * pip install .
    * python setup.py build_ext --inplace
 
-## Dataset:
+## Dataset Preparation + Preprocessing:
     * For the use case of open images dataset Download or Copy the folder (from the google drive or s3 and place it under keras_retinanet)
     ├── keras_retinanet
     ├── └── ...
     ├── └── Bathtub (example category class)
-    *   The folder should ideally contain test,train, validation and info.json
+    * The folder should ideally contain test,train, validation and info.json
+    * cd keras_retinanet/preprocessing (oid:open images dataset)
 
-    * Run the script: 
+      python run preprocess_oid.py to get the
+
 ## Train:
     * Download the model from here: https://s3.console.aws.amazon.com/s3/upload/machine-learning-pretrained-models-dev?region=eu-central-1&prefix=Keras-Retina-Net/ and put it the folder snapshots
     then run:
@@ -36,7 +38,7 @@
      classID, 3
 
    * cd keras-retinanet
-   *
+   * 
    * The output image will be written in the folder of the "output_img"
 
 ## Sample Test Results are:
