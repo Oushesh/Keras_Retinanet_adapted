@@ -11,6 +11,7 @@ import csv
 import sys
 import os.path
 from collections import OrderedDict,deque
+import argparse
 
 def _get_classes(classess_csv_path):
     class_dict = {}
@@ -135,6 +136,14 @@ def _get_xy(detections_csv_path,class_dict,img_folder):
     #"dataset/20190220_160752.jpg,202,10,640,476,goat"
     return csv_file_entries
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--img_folder",default="../Bathtub/train/data",help="folder of images")
+    parser.add_argument("--classes_csv_path",default="../Bathtub/train/metadata/classes.csv",help="csv file containing the class definitions")
+    parser.add_argument("--detection_csv_path",default="",help="csv file containing ")
+    return None
+
+
 if __name__ == '__main__':
     img_folder = "../Bathtub/train/data"
     classes_csv_path = "../Bathtub/train/metadata/classes.csv"
@@ -153,7 +162,6 @@ if __name__ == '__main__':
     write_out_annotations_csv(csv_filename,csv_file_entries)
 
 #TODO: Write csv, get 1 training iteration done --> git status
-#Wrtie out the csv file --> Test out.
 
 #Installation and the am2 service here: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
 #how to setup the aws installation  add the instructions here for aws ec2
@@ -162,5 +170,4 @@ if __name__ == '__main__':
 ## Refactor the code and start the training on aws, then check the statistics.
 ##Add statistics: add
 
-##
-## Pass the statistics to Mussie write the statistics
+## Spin off the statistics service
