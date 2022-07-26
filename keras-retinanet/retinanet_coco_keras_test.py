@@ -23,7 +23,7 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--img_dir',default='input_img',help='path to image directory')
-    parser.add_argument('--model_path', default=os.path.join("model","resnet50_coco_best_v2.1.0.h5"),help='path to load pretrained retinanet Keras model')
+    parser.add_argument('--model_path', default=os.path.join("pretrained_model","resnet50_coco_best_v2.1.0.h5"),help='path to load pretrained retinanet Keras model')
     #parser.add_argument('--annotations_file',default=os.path.join("annotations_classes","annotations.csv"),help='path to the annotations file')
     parser.add_argument('--annotations_file',default="annotations_classes/annotations.csv",help='path to the annotations file')
 
