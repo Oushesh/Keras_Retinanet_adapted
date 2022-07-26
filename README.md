@@ -1,8 +1,9 @@
 ## Instructions:
    * git clone https://github.com/Oushesh/Keras_Retinanet_adapted
 
-   *
-   * conda create
+   * conda env create -f retinanet.yml
+   * pip install -r requirements.txt
+
    * pip install . --user
    * python setup.py build_ext --inplace
    * pip install --user git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI
@@ -10,16 +11,25 @@
    * pip install .
    * python setup.py build_ext --inplace
 
+
+## Dataset:
+   
+
+
 ## Train:
-    * Place the images in the folder keras_retinanet/preprocessing/dataset/
+    * For the use case of open images dataset: Copy the folder (from the google drive or s3 and place it under keras_retinanet)
+    ├── keras_retinanet
+    ├── └── ...
+    ├── └── Bathtub
+
+    The folder should ideally contain test,train, validation and info.json
+
+    Example of run the training:
+
+    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights  keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv "relative path to annotations.csv" "relative path to classes.csv"
+
+    Example:
     python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations.csv keras_retinanet/preprocessing/classes.csv
-    /resnet50_coco_best_v2.1.0.h5
-
-
-    * Train directly with Open Images Dataset: OID
-    * Open Images Dataset:  
-    * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Boat
-    * python keras_retinanet/bin/train.py oid /path/to/OID --parent-label=Bathtub
 
 ## Test:
    * Place the pretrained model in the folder model
@@ -49,8 +59,7 @@
 * https://storage.googleapis.com/openimages/challenge_2018/bbox_labels_500_hierarchy_visualizer/circle.html
 * Build in the hierarchy circle
 
-
-* Visuaisation Script to
-
 ## Sample Results of the Bahtroom Tubs:
   ![Bathroom001](keras_retinanet/Bathtub/test/Results/2cb84e34527db533_output_Bathroom accessory.jpg)
+
+## inspiration: https://nn-box.com/box/
