@@ -1,0 +1,12 @@
+*.exp
+*.dll
+*.jpg
+*.png
+*.jpeg
+*.xml
+*.csv
+*.json
+*.pyd
+*.pyx
+*.c
+*.h5
