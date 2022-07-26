@@ -1,8 +1,7 @@
-## 
+##
 ## Instructions:
    * conda env create -f retinanet.yml
    * pip install -r requirements.txt
-
    * pip install . --user
    * python setup.py build_ext --inplace
    * pip install --user git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI
@@ -18,6 +17,7 @@
     *   The folder should ideally contain test,train, validation and info.json
 
 ## Train:
+    * Download the model and put it under: 
     Example of run the training:
 
     python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights  keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv "relative path to annotations.csv" "relative path to classes.csv"
