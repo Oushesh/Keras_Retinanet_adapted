@@ -716,4 +716,4 @@ learning_rate_fn = tf.optimizers.schedules.PiecewiseConstantDecay(
 ##Reference adjust the call to get the information
 
 ## Choose: https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018
-## 
+##
