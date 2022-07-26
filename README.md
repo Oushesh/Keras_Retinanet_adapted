@@ -1,6 +1,5 @@
+## 
 ## Instructions:
-   * git clone https://github.com/Oushesh/Keras_Retinanet_adapted
-
    * conda env create -f retinanet.yml
    * pip install -r requirements.txt
 
@@ -11,7 +10,6 @@
    * pip install .
    * python setup.py build_ext --inplace
 
-
 ## Dataset:
     * For the use case of open images dataset Download or Copy the folder (from the google drive or s3 and place it under keras_retinanet)
     ├── keras_retinanet
@@ -20,14 +18,12 @@
     *   The folder should ideally contain test,train, validation and info.json
 
 ## Train:
-
-
     Example of run the training:
 
     python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights  keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv "relative path to annotations.csv" "relative path to classes.csv"
 
     Example:
-    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations_bathtub_corrected.csv keras_retinanet/preprocessing/classes.csv
+    python keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights keras_retinanet/snapshots/resnet50_coco_best_v2.1.0.h5 --batch-size 8 --steps 500 --epochs 1 csv keras_retinanet/preprocessing/annotations_bathtub_corrected.csv keras_retinanet/preprocessing/classes_bathroom_corrected.csv
 
 ## Test:
    * Place the pretrained model in the folder model
