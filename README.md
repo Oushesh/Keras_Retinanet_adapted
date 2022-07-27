@@ -27,7 +27,6 @@
 ## Test:
    * Place the pretrained model in the folder "pretrained model" and run: python retinanet_coco_keras_test.py
 
-
    * Each column contains the name of the folder:    
    * Place the batch image in the folder: input_img
    * classes.csv contains the class definition and class number.
@@ -38,7 +37,7 @@
      classID, 3
 
    * cd keras-retinanet
-   * 
+   * s
    * The output image will be written in the folder of the "output_img"
 
 ## Sample Test Results are:
